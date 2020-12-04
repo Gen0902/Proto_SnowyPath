@@ -67,7 +67,7 @@ MonoBehaviour:
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 257
   walkingSpeed: 4
   runningSpeed: 6
   jumpForce: 4
