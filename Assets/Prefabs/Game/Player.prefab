@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 139416611496864489}
   - component: {fileID: 8320657801043981160}
   m_Layer: 9
-  m_Name: Player2
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,10 +71,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 257
-  gravity: -9.81
+  gravity: -19.62
   walkingSpeed: 4
   runningSpeed: 6
-  jumpForce: 3
+  jumpForce: 1.5
   lookSpeed: 2
   lookXLimit: 45
   canMove: 1
