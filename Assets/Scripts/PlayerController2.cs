@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class PlayerController2 : MonoBehaviour
+public class PlayerController2 : MonoBehaviour      //PROTOTYPE VERSION (BASIC)
 {
     [Header("Scene set up")]
     public Camera playerCamera;
