@@ -6,18 +6,21 @@ using UnityEngine;
 
 public class waterCanteenDrug : MonoBehaviour
 {
-    bool hasBeenDrunk = false;
+    bool hasBeenDrunken = false;
 
     void OnTriggerEnter(Collider playerCollider)
     {
         
-        if (hasBeenDrunk == false)
+        if (hasBeenDrunken == false)
         {
             GetComponent<AudioSource>().Play();
             print("Everything seems different.");
 
             GetComponent<MeshRenderer>().enabled = false;
-            hasBeenDrunk = true;
+            hasBeenDrunken = true;
+            GameObject.Find("Camera").GetComponent<Camera>().clearFlags = CameraClearFlags.Depth;
+
+           
         }
     }
 }
