@@ -7,6 +7,7 @@ using UnityEngine;
 public class waterCanteenDrug : MonoBehaviour
 {
     bool hasBeenDrunken = false;
+    public bool isSeekingGraveyard = false;
 
     void OnTriggerEnter(Collider playerCollider)
     {
@@ -19,8 +20,9 @@ public class waterCanteenDrug : MonoBehaviour
             GetComponent<MeshRenderer>().enabled = false;
             hasBeenDrunken = true;
             GameObject.Find("Camera").GetComponent<Camera>().clearFlags = CameraClearFlags.Depth;
+            isSeekingGraveyard = true;
 
-           
+
         }
     }
 }
