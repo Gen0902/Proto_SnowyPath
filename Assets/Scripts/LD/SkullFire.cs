@@ -7,6 +7,8 @@ public class SkullFire : MonoBehaviour
     public ParticleSystem ps;
     public ParticleSystem ps1;
     public bool moduleEnabled = true;
+    public AudioSource firstScream;
+    public AudioSource secondScream;
 
     void Start()
     {
@@ -25,11 +27,28 @@ public class SkullFire : MonoBehaviour
 
         if (emission.enabled == false)
         {
-            GetComponent<AudioSource>().Play();
+            firstScream.Play();
             gameObject.transform.GetChild(0).GetComponent<Light>().enabled = true;
             gameObject.transform.GetChild(3).GetComponent<Light>().enabled = true;
             emission.enabled = moduleEnabled;
             emission1.enabled = moduleEnabled;
+        }
+
+        if (GameObject.Find("Graal").GetComponent<PickupGraal>().graalIsPickedUp)
+        {
+            GameObject.Find("Graal").GetComponent<PickupGraal>().graalIsPickedUp = false;
+            secondScream.Play();
+            GameObject phantomDocks = GameObject.Find("phantomDocks");
+            MeshRenderer[] docksRenderer = phantomDocks.GetComponentsInChildren<MeshRenderer>();
+            MeshCollider[] docksCollider = phantomDocks.GetComponentsInChildren<MeshCollider>();
+            foreach (MeshRenderer renderer in docksRenderer)
+            {
+                renderer.enabled = true;
+            }
+            foreach (MeshCollider collider in docksCollider)
+            {
+                collider.enabled = true;
+            }
         }
 
 

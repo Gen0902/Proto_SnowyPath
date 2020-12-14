@@ -6,6 +6,7 @@ public class BlueFireScript : MonoBehaviour
 {
     public ParticleSystem ps;
     public bool moduleEnabled = true;
+    public bool graalCanBePickedUp = false;
 
     void Start()
     {
@@ -20,11 +21,12 @@ public class BlueFireScript : MonoBehaviour
         
 
 
-            if (emission.enabled == false)
+            if (emission.enabled == false && GameObject.Find("graveyardSeekingTriggerbox").GetComponent<GraveyardSeeking>().hasFoundGraveyard == true)
             {
                 gameObject.transform.GetChild(0).GetComponent<Light>().enabled = true;
                 emission.enabled = moduleEnabled;
                 GameObject.Find("coffin_Lid").transform.position += new Vector3(2.0f, -0.9f, 0f);
+                graalCanBePickedUp = true;
         }
 
 

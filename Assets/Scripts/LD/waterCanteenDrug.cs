@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class waterCanteenDrug : MonoBehaviour
 {
-    bool hasBeenDrunken = false;
+    public bool hasBeenDrunken = false;
     public bool isSeekingGraveyard = false;
 
     void OnTriggerEnter(Collider playerCollider)
@@ -14,6 +14,7 @@ public class waterCanteenDrug : MonoBehaviour
         
         if (hasBeenDrunken == false)
         {
+            GameObject.Find("blueFire").transform.GetChild(0).GetComponent<Light>().enabled = true;
             GetComponent<AudioSource>().Play();
             print("Everything seems different.");
 
