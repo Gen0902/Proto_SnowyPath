@@ -24,7 +24,8 @@ public class BlueFireScript : MonoBehaviour
             {
                 gameObject.transform.GetChild(0).GetComponent<Light>().enabled = true;
                 emission.enabled = moduleEnabled;
-            }
+                GameObject.Find("coffin_Lid").transform.position += new Vector3(2.0f, -0.9f, 0f);
+        }
 
 
 
